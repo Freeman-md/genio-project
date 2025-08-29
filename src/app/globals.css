@@ -16,6 +16,7 @@
   --color-foreground: var(--foreground);
 
   --color-primary: #962D72;
+  --color-secondary: #150310;
   --color-muted: var(--foreground);
 
   --font-sans: var(--font-rubik);

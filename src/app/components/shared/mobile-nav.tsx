@@ -29,7 +29,7 @@ export default function MobileNav({ navLinks }: Props) {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="absolute right-0 top-full z-50 mt-2 w-[min(80vw,18rem)] rounded-xl border border-white/10 bg-black/50 p-2 backdrop-blur"
+            className="absolute right-0 top-full z-50 mt-2 w-[min(80vw,18rem)] rounded-xl border border-white/10 bg-secondary/50 p-2 backdrop-blur"
             initial={{ opacity: 0, y: -6, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.96 }}
