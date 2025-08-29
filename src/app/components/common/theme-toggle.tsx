@@ -1,5 +1,6 @@
 "use client";
 
+import { div } from "motion/react-client";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
@@ -33,7 +34,8 @@ export default function ThemeToggle() {
   if (!mounted) return null;
 
   return (
-    <button
+    <div>
+      <button
       type="button"
       onClick={toggle}
       aria-label="Toggle theme"
@@ -44,5 +46,6 @@ export default function ThemeToggle() {
       </span>
       <span className="text-lg">{theme === "dark" ? "🌙" : "☀️"}</span>
     </button>
+    </div>
   );
 }

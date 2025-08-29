@@ -29,7 +29,7 @@ export default function TestimonialSlider({
   const goToNext = () => setActiveIndex(nextIndex);
 
   return (
-    <div className="relative container py-8">
+    <div className="relative container py-8 overflow-x-hidden">
       <div className={`flex justify-center gap-6 sm:gap-8 lg:gap-12 `}>
         <Card item={items[prevIndex]} isActive={false} />
 
@@ -74,7 +74,7 @@ function Card({
       radius="rounded-4xl"
       className={`flex-none shrink-0
 +                 min-w-[260px] w-[65vw] sm:w-[50vw] lg:w-1/3 max-w-[360px]
-+                 h-[420px] md:h-[460px] ${
+min-h-[460px] ${
         isActive ? "scale-100 opacity-100 z-10" : "scale-95 opacity-60 z-0"
       }`}
       innerClassName="flex flex-col items-center justify-between text-center h-full px-8 py-12 bg-muted"

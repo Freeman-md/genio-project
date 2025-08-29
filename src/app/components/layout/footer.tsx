@@ -145,7 +145,7 @@ export default function Footer() {
           />
         </div>
 
-         <div className="mt-10 flex items-center justify-between gap-6">
+         <div className="mt-10 flex max-sm:flex-col sm:items-center sm:justify-between gap-6">
           <div className="text-foreground/50 text-sm leading-relaxed">
             <p>
               Copyright © 2019-2024 GEN10 Ltd T/A Genio Accountants VAT Number:
