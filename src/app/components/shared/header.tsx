@@ -30,7 +30,7 @@ export default function Header() {
           <div className="hidden w-full md:flex items-center gap-4 lg:gap-20">
             <nav
               aria-label="Primary"
-              className="flex flex-1 items-center rounded-full bg-white/5 px-4 py-2 backdrop-blur"
+              className="flex flex-1 items-center rounded-full bg-white/5 px-6 py-2 backdrop-blur"
             >
               <ul className="flex items-center gap-2 justify-around w-full">
                 {NAV_LINKS.map((label) => {
@@ -40,10 +40,10 @@ export default function Header() {
                       <Link
                         href="#"
                         className={[
-                          "block rounded-full px-3 py-1.5 text-sm transition",
+                          "block rounded-full px-3 py-1.5 text-sm transition duration-200",
                           isActive
-                            ? "bg-white/15 text-white"
-                            : "text-white/80 hover:bg-white/10 hover:text-white",
+                            ? "bg-gradient-to-b from-white/20 to-white/5 text-white shadow-sm"
+                            : "text-white/80 hover:bg-gradient-to-b hover:from-white/15 hover:to-white/5 hover:text-white",
                         ].join(" ")}
                         aria-current={isActive ? "page" : undefined}
                       >

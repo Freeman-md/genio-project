@@ -46,8 +46,8 @@ export default function MobileNav({ navLinks }: Props) {
                         className={[
                           "block rounded-lg px-3 py-2 text-xs transition",
                           isActive
-                            ? "bg-white/15 text-white"
-                            : "text-white/80 hover:bg-white/10 hover:text-white",
+                            ? "bg-gradient-to-b from-white/20 to-white/5 text-white shadow-sm"
+                            : "text-white/80 hover:bg-gradient-to-b hover:from-white/15 hover:to-white/5 hover:text-white",
                         ].join(" ")}
                         aria-current={isActive ? "page" : undefined}
                         onClick={() => setOpen(false)}
