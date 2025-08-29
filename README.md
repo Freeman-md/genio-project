@@ -17,7 +17,10 @@ Genio Accountants is a modern, fully responsive landing page for a professional 
 ## Live Demo & Previews
 
 * **Live Demo:** [https://genio-project-nine.vercel.app/](https://genio-project-nine.vercel.app/)
-* **Video Preview:** *Coming soon*
+* **Video Preview:**  
+<div align="center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/7KRBJZb6S6s" title="Genio Landing Page Preview" frameborder="0" allowfullscreen></iframe>
+  </div>
 
 | Desktop                                    | Tablet                                   | Mobile                                   |
 | ------------------------------------------ | ---------------------------------------- | ---------------------------------------- |
