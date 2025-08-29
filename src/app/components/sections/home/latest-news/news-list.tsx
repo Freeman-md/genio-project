@@ -17,7 +17,7 @@ type Item = {
 export default function NewsList({ items }: { items: Item[] }) {
   return (
     <motion.ul
-      className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4"
+      className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
