@@ -149,6 +149,17 @@ However, achieving perfect alignment across **all breakpoints** proved tricky du
 
 This keeps the layout clean for now, but the feature can be added back later without changing any existing structure.
 
+## Light Mode Asset Support
+While the layout supports **light/dark themes** via CSS variables, some assets aren't optimized yet:  
+
+- Certain **SVG icons** (e.g., the right arrow, the logos too) are designed for **dark backgrounds** and become invisible on light mode.
+- Some **hero and decorative images** lack light-mode variations.
+- Since alternate assets are not yet available, **light mode looks incomplete** visually.
+
+**Future Plan:**  
+- Add **light-mode variants** for images, icons, and connector SVGs.
+- Use **theme-aware asset swapping** via Next.js dynamic imports.
+
 ---
 
 ## Future Improvements
