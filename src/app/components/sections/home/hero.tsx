@@ -3,8 +3,8 @@ import Button from "@/app/components/ui/button";
 export default function Hero() {
   return (
     <section className="relative isolate flex items-center justify-center text-center min-h-screen">
-      <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 bg-hero-vignette" />
+      <div className="absolute inset-0 bg-gradient" />
+      <div className="absolute inset-0 bg-vignette" />
       <div className="absolute inset-0 edge-fade" />
 
       {/* Content */}

@@ -10,12 +10,10 @@
   --hero-pink: #9d1c5c;
   --hero-glow: #af207a;
 
-  --border-gradient: linear-gradient(
-    180deg,
-    rgba(150, 34, 122, 0.75) 0%,
-    rgba(171, 91, 154, 0.75) 46%,
-    rgba(192, 146, 171, 0.75) 100%
-  );
+  --border-gradient: linear-gradient(180deg,
+      rgba(150, 34, 122, 0.75) 0%,
+      rgba(171, 91, 154, 0.75) 46%,
+      rgba(192, 146, 171, 0.75) 100%);
 }
 
 @theme inline {
@@ -52,7 +50,7 @@
     background-image: linear-gradient(180deg, #ffffff 37%, #F49ECC 100%);
   }
 
-  .bg-hero-gradient {
+  .bg-gradient {
     background:
       radial-gradient(60% 50% at 55% 52%, color-mix(in oklab, var(--hero-glow) 60%, transparent) 0%, transparent 60%),
       radial-gradient(42% 36% at 50% 78%, color-mix(in oklab, var(--hero-pink) 70%, transparent) 0%, transparent 55%),
@@ -60,7 +58,7 @@
       linear-gradient(180deg, var(--hero-deep) 0%, var(--hero-berry) 100%);
   }
 
-  .bg-hero-vignette {
+  .bg-vignette {
     background: radial-gradient(circle at 50% 50%,
         transparent 82%,
         color-mix(in oklab, var(--background) 94%, transparent) 100%);
@@ -72,6 +70,25 @@
       linear-gradient(to top, color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
       linear-gradient(to right, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%),
       linear-gradient(to left, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%);
+    pointer-events: none;
+  }
+
+  .gradient-ring {
+    position: relative;
+  }
+
+  .gradient-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--ring-size, 1px);
+    background: var(--border-gradient);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     pointer-events: none;
   }
 }
