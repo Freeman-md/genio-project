@@ -27,12 +27,10 @@ export default function ServicesHub() {
       <div className="container relative">
         <div className="relative grid grid-cols-[1.5fr_9fr_1.5fr] items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 max-[415px]:gap-4">
           <div className="flex flex-col gap-6 sm:gap-8 md:gap-12 lg:gap-40">
-            {leftItems.map((service, index) => (
+            {leftItems.map((service) => (
               <ServiceCard
                 key={service.id}
                 label={service.label}
-                index={index}
-                side="left"
               />
             ))}
           </div>
@@ -92,12 +90,10 @@ export default function ServicesHub() {
 
           {/* RIGHT STACK */}
           <div className="flex flex-col gap-6 sm:gap-8 md:gap-12 lg:gap-40">
-            {rightItems.map((service, index) => (
+            {rightItems.map((service) => (
               <ServiceCard
                 key={service.id}
                 label={service.label}
-                index={index}
-                side="right"
               />
             ))}
           </div>

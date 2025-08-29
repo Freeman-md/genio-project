@@ -133,6 +133,21 @@ npm run dev
 
 ---
 
+## Service Card Connectors (Planned Enhancement)
+
+The connectors between the service cards and the central hub were removed in this version.
+
+I initially attempted to make them **fully dynamic** — starting from the **exact vertical center** of each card, scaling responsively, and curving into the hub.  
+However, achieving perfect alignment across **all breakpoints** proved tricky due to SVG scaling and aspect ratio constraints.
+
+**Future Plan:**  
+- Either make them **static** (pixel-perfect SVGs per breakpoint), or  
+- Implement a **dynamic Bézier path** solution that calculates exact positions at runtime.
+
+This keeps the layout clean for now, but the feature can be added back later without changing any existing structure.
+
+---
+
 ## Future Improvements
 
 * Add automated accessibility testing (e.g., Lighthouse CI, axe) and performance audits.

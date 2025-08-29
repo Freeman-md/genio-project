@@ -4,56 +4,12 @@ import GradientBorder from "@/app/components/ui/gradient-border";
 
 function ServiceCard({
   label,
-  index,
-  side,
 }: {
   label: string;
-  index: number;
-  side: "left" | "right";
 }) {
-  const isTop = index === 0;
-  const isMiddle = index === 1;
-  const isBottom = index === 2;
-
-  const connectorSrc = isMiddle
-    ? "/svgs/straight-connector.svg"
-    : "/svgs/s-shaped-connector.svg";
-
-  let flip = "";
-  if (!isMiddle) {
-    if (isTop) {
-      flip = side === "left" ? "-scale-x-100 top-" : "";
-    } else if (isBottom) {
-      flip = side === "left" ? "-scale-x-100 -scale-y-100" : "-scale-y-100";
-    }
-  }
-
-  const horizontalPosition = side === "left" ? "-right-full" : "-left-full";
-
   return (
     <div className="relative group cursor-pointer">
-      <Image
-        src={connectorSrc}
-        alt="connector"
-        width={600}
-        height={600}
-        className={`absolute ${horizontalPosition} -z-20 object-contain transform transition-all duration-300
-    ${
-      isMiddle
-        ? "top-1/2 -translate-y-1/2"
-        : isTop
-        ? "top-0 xl:translate-y-1/4"
-        : "bottom-0 xl:-translate-y-1/4"
-    }
-    ${
-      isMiddle
-        ? "w-[120px] sm:w-[200px] md:w-[280px] lg:w-[360px]"
-        : "w-[220px] sm:w-[300px] md:w-[400px] lg:w-[1000px]"
-    }
-    ${flip}
-    ${isMiddle ? "h-[30px] sm:h-[40px]" : "h-[140px] sm:h-[200px]"}
-  `}
-      />
+      
 
       <div
         aria-hidden
