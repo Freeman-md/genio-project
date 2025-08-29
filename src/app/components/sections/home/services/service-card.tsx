@@ -1,16 +1,29 @@
 "use client";
 import Image from "next/image";
 import GradientBorder from "@/app/components/ui/gradient-border";
+import { motion } from "motion/react";
 
-function ServiceCard({
+function ServiceCard({ 
   label,
-}: {
-  label: string;
+  side = "right",
+}: { 
+  label: string,
+  side?: "left" | "right"
 }) {
   return (
-    <div className="relative group cursor-pointer">
-      
-
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      transition={{
+        opacity: { duration: 0.25 },
+        scale: { duration: 0.25 },
+        y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+      }}
+      className={`relative group cursor-pointer ${
+        side === "left" ? "place-items-end" : ""
+      }`}
+    >
       <div
         aria-hidden
         className="
@@ -51,7 +64,7 @@ function ServiceCard({
           priority
         />
       </GradientBorder>
-    </div>
+    </motion.div>
   );
 }
 
