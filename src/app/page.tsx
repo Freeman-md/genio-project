@@ -1,7 +1,9 @@
+import Hero from "./components/sections/home/hero";
+
 export default function Home() {
   return (
     <div>
-      This is the homepage
+      <Hero />
     </div>
   );
 }

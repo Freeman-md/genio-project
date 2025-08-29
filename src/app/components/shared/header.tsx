@@ -19,7 +19,7 @@ export default function Header() {
         <div className="flex max-md:justify-between md:flex-col gap-10">
           <Link href="/" aria-label="Genio Accountants">
             <Image
-              src="/images/genio-logo-white.svg"
+              src="/svgs/genio-logo-white.svg"
               width={141}
               height={49}
               alt="Genio Accountants Logo"
@@ -27,10 +27,10 @@ export default function Header() {
             />
           </Link>
 
-          <div className="hidden w-full md:flex items-center gap-4 lg:gap-20">
+          <div className="hidden w-full md:flex items-center gap-4 lg:gap-16 xl:gap-20">
             <nav
               aria-label="Primary"
-              className="flex flex-1 items-center rounded-full bg-white/5 px-6 py-2 backdrop-blur"
+              className="flex flex-1 items-center rounded-full bg-white/5 px-2 lg:px-6 py-2 backdrop-blur"
             >
               <ul className="flex items-center gap-2 justify-around w-full">
                 {NAV_LINKS.map((label) => {
@@ -40,7 +40,7 @@ export default function Header() {
                       <Link
                         href="#"
                         className={[
-                          "block rounded-full px-3 py-1.5 text-sm transition duration-200",
+                          "block rounded-full px-3 py-1.5 text-sm transition duration-200 ",
                           isActive
                             ? "bg-gradient-to-b from-white/20 to-white/5 text-white shadow-sm"
                             : "text-white/80 hover:bg-gradient-to-b hover:from-white/15 hover:to-white/5 hover:text-white",
@@ -61,7 +61,7 @@ export default function Header() {
               </label>
               <div className="flex items-center gap-3 rounded-full bg-white/5 px-4 py-3 backdrop-blur">
                 <Image
-                  src="/images/search-icon.svg"
+                  src="/svgs/search-icon.svg"
                   width={24}
                   height={24}
                   alt="Search Icon"

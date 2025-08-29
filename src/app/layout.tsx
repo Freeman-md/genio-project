@@ -6,6 +6,7 @@ import Header from "./components/shared/header";
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -20,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rubik.variable} antialiased`}
-      >
+      <body className={`${rubik.className} antialiased`}>
         <Header />
         {children}
       </body>

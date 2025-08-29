@@ -16,7 +16,7 @@ export default function MobileNav({ navLinks }: Props) {
     <div className="relative md:hidden">
       <button
         type="button"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/15 bg-white/5 text-white/90"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-md cursor-pointer text-white/90"
         aria-label="Open menu"
         aria-expanded={open}
         aria-controls="mobile-menu"
@@ -29,7 +29,7 @@ export default function MobileNav({ navLinks }: Props) {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="absolute right-0 top-full z-50 mt-2 w-[min(80vw,18rem)] rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur"
+            className="absolute right-0 top-full z-50 mt-2 w-[min(80vw,18rem)] rounded-xl border border-white/10 bg-black/50 p-2 backdrop-blur"
             initial={{ opacity: 0, y: -6, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.96 }}
@@ -67,7 +67,7 @@ export default function MobileNav({ navLinks }: Props) {
               </label>
               <div className="flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2">
                 <Image
-                  src="/images/search-icon.svg"
+                  src="/svgs/search-icon.svg"
                   width={18}
                   height={18}
                   alt="Search Icon"

@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #191919;
+
+  --hero-deep: #351c2d;
+  --hero-berry: #4f1c3f;
+  --hero-mid: #832169;
+  --hero-pink: #9d1c5c;
+  --hero-glow: #af207a;
 }
 
 @theme inline {
@@ -26,6 +32,42 @@
   margin-inline: auto;
   padding-inline: 1.5rem;
   padding-block: 1.5rem;
+
+  @media (min-width: 1280px) {
+    padding-inline: 5rem;
+  }
+}
+
+@layer utilities {
+  .text-brand-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(180deg, #ffffff 37%, #F49ECC 100%);
+  }
+
+  .bg-hero-gradient {
+    background:
+      radial-gradient(60% 50% at 55% 52%, color-mix(in oklab, var(--hero-glow) 60%, transparent) 0%, transparent 60%),
+      radial-gradient(42% 36% at 50% 78%, color-mix(in oklab, var(--hero-pink) 70%, transparent) 0%, transparent 55%),
+      radial-gradient(70% 65% at 18% 0%, color-mix(in oklab, var(--hero-mid) 35%, transparent) 0%, transparent 60%),
+      linear-gradient(180deg, var(--hero-deep) 0%, var(--hero-berry) 100%);
+  }
+
+  .bg-hero-vignette {
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 82%,
+    color-mix(in oklab, var(--background) 94%, transparent) 100%
+  );
+}
+
+  .edge-fade {
+    background:
+      linear-gradient(to bottom, color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
+      linear-gradient(to top,    color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
+      linear-gradient(to right,  color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%),
+      linear-gradient(to left,   color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%);
+    pointer-events: none;
+  }
 }
 
 body {
