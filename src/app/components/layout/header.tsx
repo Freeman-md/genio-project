@@ -1,3 +1,7 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./mobile-nav";
@@ -13,10 +17,20 @@ const NAV_LINKS = [
 ];
 
 export default function Header() {
+  const [showSearch, setShowSearch] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (showSearch && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [showSearch]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container">
         <div className="flex max-md:justify-between md:flex-col gap-10">
+          {/* Logo */}
           <Link href="/" aria-label="Genio Accountants">
             <Image
               src="/svgs/genio-logo-white.svg"
@@ -27,6 +41,7 @@ export default function Header() {
             />
           </Link>
 
+          {/* Main Nav + Search */}
           <div className="hidden w-full md:flex items-center gap-4 lg:gap-16 xl:gap-20">
             <nav
               aria-label="Primary"
@@ -55,7 +70,7 @@ export default function Header() {
               </ul>
             </nav>
 
-            <div className="lg:min-w-1/4">
+            <div className="lg:min-w-1/4 max-lg:hidden">
               <label htmlFor="site-search" className="sr-only">
                 Search
               </label>
@@ -69,14 +84,54 @@ export default function Header() {
                 <input
                   id="site-search"
                   placeholder="Search..."
-                  className="w-full bg-transparent max-lg:hidden text-sm text-white placeholder-white/90 outline-none"
+                  className="w-full bg-transparent text-sm text-white placeholder-white/90 outline-none"
                 />
               </div>
             </div>
+
+          <button
+            onClick={() => setShowSearch((prev) => !prev)}
+            className="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition cursor-pointer"
+            aria-label="Toggle search"
+          >
+            <Image
+              src="/svgs/search-icon.svg"
+              width={28}
+              height={28}
+              alt="Search Icon"
+            />
+          </button>
           </div>
 
           <MobileNav navLinks={NAV_LINKS} />
         </div>
+
+        <AnimatePresence>
+          {showSearch && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="lg:hidden mt-4"
+            >
+              <div className="flex items-center gap-3 rounded-full bg-white/10 px-4 py-3 backdrop-blur">
+                <Image
+                  src="/svgs/search-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Search Icon"
+                />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  placeholder="Search..."
+                  className="flex-1 bg-transparent text-white placeholder-white/80 outline-none"
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
