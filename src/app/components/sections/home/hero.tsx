@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Content */}
       <div className="container relative z-10 pt-28 pb-24 md:pt-36 md:pb-28">
         <div className="mx-auto max-w-[980px]">
-          <h1 className="text-white font-bold leading-[1.1] text-[40px] md:text-[56px] lg:text-[64px] tracking-tight">
+          <h1 className="text-foreground font-bold leading-[1.1] text-[40px] md:text-[56px] lg:text-[64px] tracking-tight">
             Cracking Complexity:
           </h1>
 
@@ -18,7 +18,7 @@ export default function Hero() {
             Unravelling Financial Puzzles
           </h2>
 
-          <p className="mx-auto mt-7 text-white/90 text-[18px] md:text-[22px] font-normal leading-[1.2] text-center">
+          <p className="mx-auto mt-7 text-foreground/90 text-[18px] md:text-[22px] font-normal leading-[1.2] text-center">
             Whether you&apos;re a small startup, a growing SME, or a seasoned
             entrepreneur, we&apos;ve got you covered with a range of
             comprehensive accounting services.

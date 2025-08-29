@@ -54,7 +54,7 @@ export default function NewsletterInput({
           onChange={(e) => setEmail(e.target.value)}
           placeholder={placeholder}
           aria-label="Email address"
-          className="w-full bg-transparent text-white/90 placeholder-white/70 outline-none text-base"
+          className="w-full bg-transparent text-foreground/90 placeholder-foreground/70 outline-none text-base"
         />
         <button
           type="submit"

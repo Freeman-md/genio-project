@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NewsletterInput from "../common/newsletter-input";
 import GradientBorder from "../ui/gradient-border";
+import ThemeToggle from "../common/theme-toggle";
 
 export default function Footer() {
   return (
@@ -144,14 +145,18 @@ export default function Footer() {
           />
         </div>
 
-        <div className="mt-8 text-white/50">
-          <p>
-            Copyright © 2019-2024 GEN10 Ltd T/A Genio Accountants VAT Number:
-            GB306428811
-            <br />
-            Company Number: 11269181 Address: 33a Portsmouth Road, Southampton,
-            SO19 9BA
-          </p>
+         <div className="mt-10 flex items-center justify-between gap-6">
+          <div className="text-foreground/50 text-sm leading-relaxed">
+            <p>
+              Copyright © 2019-2024 GEN10 Ltd T/A Genio Accountants VAT Number:
+              GB306428811
+              <br />
+              Company Number: 11269181 Address: 33a Portsmouth Road, Southampton,
+              SO19 9BA
+            </p>
+          </div>
+
+          <ThemeToggle />
         </div>
       </div>
     </footer>

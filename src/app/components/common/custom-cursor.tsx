@@ -61,8 +61,8 @@ function CustomCursor() {
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
         className={`min-w-10 min-h-10 px-2 max-w-24 max-h-24 aspect-square rounded-full border backdrop-blur-xl flex items-center justify-center text-[10px] font-medium uppercase tracking-wide transition-colors duration-300 ${
           hovering
-            ? "bg-white border-white text-black"
-            : "bg-primary/80 border-white/10 text-white"
+            ? "bg-foreground border-foreground text-background"
+            : "bg-primary/80 border-foreground/10 text-foreground"
         }`}
       >
         <span

@@ -36,34 +36,38 @@ export default function Header() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <div className={`max-md:fixed w-full inset-x-0 ${
+      <div
+        className={`max-md:fixed w-full inset-x-0 ${
           scrolled ? "top-0 bg-surface-2/70 backdrop-blur" : "bg-transparent"
-        }`}>
+        }`}
+      >
         <div className="container flex items-center justify-between gap-10">
           <Link href="/" aria-label="Genio Accountants">
-          <Image
-            src="/svgs/genio-logo-white.svg"
-            width={141}
-            height={49}
-            alt="Genio Accountants Logo"
-            priority
-          />
-        </Link>
+            <Image
+              src="/svgs/genio-logo-white.svg"
+              width={141}
+              height={49}
+              alt="Genio Accountants Logo"
+              priority
+            />
+          </Link>
 
-        <MobileNav navLinks={NAV_LINKS} />
+          <MobileNav navLinks={NAV_LINKS} />
         </div>
       </div>
 
       <nav
         className={`max-md:hidden md:fixed inset-x-0 transition-all duration-300 ease-in-out [will-change:top] ${
-          scrolled ? "top-0 bg-surface-2/70 backdrop-blur" : "top-20 bg-transparent"
+          scrolled
+            ? "top-0 bg-surface-2/70 backdrop-blur"
+            : "top-20 bg-transparent"
         }`}
       >
         <div className="container">
           <div className="w-full md:flex items-center gap-4 lg:gap-16 xl:gap-20">
             <nav
               aria-label="Primary"
-              className="flex flex-1 items-center rounded-full bg-white/5 px-2 lg:px-6 py-2 backdrop-blur"
+              className="flex flex-1 items-center rounded-full bg-foreground/5 px-2 lg:px-6 py-2 backdrop-blur"
             >
               <ul className="flex items-center gap-2 justify-around w-full">
                 {NAV_LINKS.map((label) => {
@@ -75,8 +79,8 @@ export default function Header() {
                         className={[
                           "block rounded-full px-3 py-1.5 text-sm transition duration-200 ",
                           isActive
-                            ? "bg-gradient-to-b from-white/20 to-white/5 text-white shadow-sm"
-                            : "text-white/80 hover:bg-gradient-to-b hover:from-white/15 hover:to-white/5 hover:text-white",
+                            ? "bg-gradient-to-b from-foreground/20 to-foreground/5 text-foreground shadow-sm"
+                            : "text-foreground/80 hover:bg-gradient-to-b hover:from-foreground/15 hover:to-foreground/5 hover:text-foreground",
                         ].join(" ")}
                         aria-current={isActive ? "page" : undefined}
                       >
@@ -92,7 +96,7 @@ export default function Header() {
               <label htmlFor="site-search" className="sr-only">
                 Search
               </label>
-              <div className="flex items-center gap-3 rounded-full bg-white/5 px-4 py-3 backdrop-blur">
+              <div className="flex items-center gap-3 rounded-full bg-foreground/5 px-4 py-3 backdrop-blur">
                 <Image
                   src="/svgs/search-icon.svg"
                   width={24}
@@ -102,14 +106,14 @@ export default function Header() {
                 <input
                   id="site-search"
                   placeholder="Search..."
-                  className="w-full bg-transparent text-sm text-white placeholder-white/90 outline-none"
+                  className="w-full bg-transparent text-sm text-foreground placeholder-foreground/90 outline-none"
                 />
               </div>
             </div>
 
             <button
               onClick={() => setShowSearch((prev) => !prev)}
-              className="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition cursor-pointer"
+              className="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-foreground/10 transition cursor-pointer"
               aria-label="Toggle search"
             >
               <Image
@@ -130,7 +134,7 @@ export default function Header() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="lg:hidden mt-4"
               >
-                <div className="flex items-center gap-3 rounded-full bg-white/10 px-4 py-3 backdrop-blur">
+                <div className="flex items-center gap-3 rounded-full bg-foreground/10 px-4 py-3 backdrop-blur">
                   <Image
                     src="/svgs/search-icon.svg"
                     width={24}
@@ -141,7 +145,7 @@ export default function Header() {
                     ref={inputRef}
                     type="text"
                     placeholder="Search..."
-                    className="flex-1 bg-transparent text-white placeholder-white/80 outline-none"
+                    className="flex-1 bg-transparent text-foreground placeholder-foreground/80 outline-none"
                   />
                 </div>
               </motion.div>

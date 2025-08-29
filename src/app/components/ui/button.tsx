@@ -8,9 +8,9 @@ const buttonStyles = cva(
       variant: {
         "solid-white":
           "text-black shadow-sm bg-[linear-gradient(to_bottom,rgba(255,255,255,1)_0%,rgba(230,230,230,1)_100%)] hover:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,rgba(220,220,220,0.9)_100%)]",
-         "solid-muted": "bg-muted text-white hover:bg-muted/90",
+        "solid-muted": "bg-muted text-foreground hover:bg-muted/90",
         "outline-white":
-          "border border-white text-white hover:bg-white/10",
+          "border border-white text-foreground hover:bg-white/10",
       },
       size: {
         sm: "px-4 py-1",
@@ -28,6 +28,16 @@ const buttonStyles = cva(
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonStyles>;
 
-export default function Button({ className, variant, size, ...props }: ButtonProps) {
-  return <button className={cn(buttonStyles({ variant, size }), className)} {...props} />;
+export default function Button({
+  className,
+  variant,
+  size,
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      className={cn(buttonStyles({ variant, size }), className)}
+      {...props}
+    />
+  );
 }

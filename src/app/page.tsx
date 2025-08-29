@@ -13,7 +13,7 @@ export default function Home() {
 
       <TaxPlanning />
 
-      {/* <Testimonials /> */}
+      <Testimonials />
 
       <LatestNews />
     </div>

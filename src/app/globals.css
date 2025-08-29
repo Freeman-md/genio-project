@@ -1,39 +1,91 @@
 @import "tailwindcss";
 
-:root {
+/* ---------- LIGHT THEME DEFAULT ---------- */
+:root,
+:root[data-theme="light"] {
+  
   --background: #ffffff;
   --foreground: #191919;
 
+  --color-primary: #962d72;
+
+  --color-surface-2: #f5f5f7;
+  --color-muted: #fdfdfd;   
+
+  --hero-deep: #e6e2f0;
+  --hero-berry: #f3d1e8;
+  --hero-mid: #e79ed4;
+  --hero-pink: #f9bcd6;
+  --hero-glow: #ff79c6;
+
+  --tax-planning: #17130a;
+
+  /* Subtle border gradient for light backgrounds */
+  --border-gradient: linear-gradient(
+    180deg,
+    rgba(150, 34, 122, 0.25) 0%,
+    rgba(171, 91, 154, 0.25) 46%,
+    rgba(192, 146, 171, 0.25) 100%
+  );
+
+    --brand-gradient-start: #962D72; /* deep brand purple for light mode */
+  --brand-gradient-end: #F49ECC
+}
+
+/* ---------- DARK THEME VARIABLES ---------- */
+:root[data-theme="dark"] {
+  --background: #1c1c1c;
+  --foreground: #ffffff;
+
+  --color-primary: #962d72;
+
+  /* Dark surfaces */
+  --color-surface-2: #150310; /* deep panel bg */
+  --color-muted: #1f1f1f;
+
+  /* Hero accent gradients tuned for dark */
   --hero-deep: #351c2d;
   --hero-berry: #4f1c3f;
   --hero-mid: #832169;
   --hero-pink: #9d1c5c;
   --hero-glow: #af207a;
 
-  --border-gradient: linear-gradient(180deg,
-      rgba(150, 34, 122, 0.75) 0%,
-      rgba(171, 91, 154, 0.75) 46%,
-      rgba(192, 146, 171, 0.75) 100%);
+  --tax-planning: #F7F4EA;
+
+  /* Stronger border gradient for contrast */
+  --border-gradient: linear-gradient(
+    180deg,
+    rgba(150, 34, 122, 0.75) 0%,
+    rgba(171, 91, 154, 0.75) 46%,
+    rgba(192, 146, 171, 0.75) 100%
+  );
+
+    --brand-gradient-start: #ffffff; /* bright text for dark mode */
+  --brand-gradient-end: #F49ECC;
 }
 
+/* ---------- FALLBACK TO SYSTEM PREFERENCE ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+/* ---------- TAILWIND THEME INTEGRATION ---------- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-primary: #962D72;
-  --color-surface-2: #150310;
-  --color-muted: var(--background);
+  --color-primary: var(--color-primary);
+  --color-surface-2: var(--color-surface-2);
+  --color-muted: var(--color-muted);
+
+  --color-tax-planning: var(--tax-planning);
 
   --font-sans: var(--font-rubik);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1c1c;
-    --foreground: #ffffff;
-  }
-}
-
+/* ---------- CONTAINER UTILITY ---------- */
 @utility container {
   margin-inline: auto;
   padding-inline: 1.5rem;
@@ -44,12 +96,15 @@
   }
 }
 
+/* ---------- UTILITIES ---------- */
 @layer utilities {
+  /* Brand gradient text */
   .text-brand-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(180deg, #ffffff 37%, #F49ECC 100%);
+        background-image: linear-gradient(180deg, var(--brand-gradient-start) 37%, var(--brand-gradient-end) 100%);
   }
 
+  /* Hero layered background gradients */
   .bg-gradient {
     background:
       radial-gradient(60% 50% at 55% 52%, color-mix(in oklab, var(--hero-glow) 60%, transparent) 0%, transparent 60%),
@@ -58,12 +113,14 @@
       linear-gradient(180deg, var(--hero-deep) 0%, var(--hero-berry) 100%);
   }
 
+  /* Hero vignette overlay */
   .bg-vignette {
     background: radial-gradient(circle at 50% 50%,
-        transparent 82%,
-        color-mix(in oklab, var(--background) 94%, transparent) 100%);
+      transparent 82%,
+      color-mix(in oklab, var(--background) 94%, transparent) 100%);
   }
 
+  /* Edge fading */
   .edge-fade {
     background:
       linear-gradient(to bottom, color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
@@ -73,10 +130,10 @@
     pointer-events: none;
   }
 
+  /* Reusable gradient border ring */
   .gradient-ring {
     position: relative;
   }
-
   .gradient-ring::before {
     content: "";
     position: absolute;
@@ -91,11 +148,12 @@
     mask-composite: exclude;
     pointer-events: none;
   }
-
 }
 
+/* ---------- BASE ---------- */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

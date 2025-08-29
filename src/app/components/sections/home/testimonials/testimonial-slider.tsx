@@ -13,7 +13,11 @@ type TestimonialItem = {
   text: string;
 };
 
-export default function TestimonialSlider({ items }: { items: TestimonialItem[] }) {
+export default function TestimonialSlider({
+  items,
+}: {
+  items: TestimonialItem[];
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const total = items.length;
@@ -39,7 +43,12 @@ export default function TestimonialSlider({ items }: { items: TestimonialItem[] 
         aria-label="Previous testimonial"
         className="absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full transition"
       >
-        <Image src="/svgs/left-arrow.svg" alt="Previous" width={15} height={15} />
+        <Image
+          src="/svgs/left-arrow.svg"
+          alt="Previous"
+          width={15}
+          height={15}
+        />
       </button>
 
       <button
@@ -53,7 +62,13 @@ export default function TestimonialSlider({ items }: { items: TestimonialItem[] 
   );
 }
 
-function Card({ item, isActive }: { item: TestimonialItem; isActive: boolean }) {
+function Card({
+  item,
+  isActive,
+}: {
+  item: TestimonialItem;
+  isActive: boolean;
+}) {
   return (
     <GradientBorder
       radius="rounded-4xl"
@@ -73,7 +88,9 @@ function Card({ item, isActive }: { item: TestimonialItem; isActive: boolean }) 
               alt="Star"
               width={25}
               height={25}
-              className={`${index < item.rating ? "opacity-100" : "opacity-30"}`}
+              className={`${
+                index < item.rating ? "opacity-100" : "opacity-30"
+              }`}
             />
           ))}
         </div>
@@ -84,7 +101,9 @@ function Card({ item, isActive }: { item: TestimonialItem; isActive: boolean }) 
         </div>
       </div>
 
-      {!isActive && <p className="mt-6 text-sm text-white/60">{item.date}</p>}
+      {!isActive && (
+        <p className="mt-6 text-sm text-foreground/60">{item.date}</p>
+      )}
 
       {isActive && (
         <div className="mt-6">
