@@ -46,7 +46,7 @@ export default function NewsletterInput({
     <form onSubmit={onSubmit} className="w-full max-w-[520px]">
       <GradientBorder
         radius="rounded-full"
-        innerClassName="flex items-center gap-3 bg-muted px-4 py-2 backdrop-blur"
+        innerClassName="flex items-center gap-3 bg-muted px-4 py-2"
       >
         <input
           type="email"
