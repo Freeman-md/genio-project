@@ -3,6 +3,8 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import ScrollToTop from "./components/common/scroll-to-top";
+import CursorWrapper from "./components/common/custom-cursor";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -22,10 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} antialiased`}>
+      <body className={`${rubik.className} antialiased md:cursor-none`}>
         <Header />
+
+        <CursorWrapper />
+
         {children}
+
         <Footer />
+
+        <ScrollToTop />
       </body>
     </html>
   );
