@@ -55,8 +55,8 @@ export default function Header() {
       </div>
 
       <nav
-        className={`max-md:hidden md:fixed inset-x-0 transition ${
-          scrolled ? "top-0 bg-surface-2/70 backdrop-blur" : "bg-transparent"
+        className={`max-md:hidden md:fixed inset-x-0 transition-all duration-300 ease-in-out [will-change:top] ${
+          scrolled ? "top-0 bg-surface-2/70 backdrop-blur" : "top-20 bg-transparent"
         }`}
       >
         <div className="container">
