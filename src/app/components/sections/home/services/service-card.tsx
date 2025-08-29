@@ -80,7 +80,7 @@ function ServiceCard({
       >
         <span
           className="
-            text-foreground sm:font-semibold
+            text-white sm:font-semibold
             text-xs sm:text-base md:text-lg
           "
         >
