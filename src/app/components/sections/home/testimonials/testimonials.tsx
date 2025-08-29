@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TestimonialList from "./testimonial-list";
+import TestimonialList from "./testimonial-slider";
 
 type Testimonial = {
   id: string;
@@ -11,15 +11,7 @@ type Testimonial = {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    id: "t1",
-    name: "Mark Crowley",
-    date: "15/02/2024",
-    rating: 5,
-    text:
-      "Jeremy has been doing my partners accounts for over 3 years now and we are very happy with the top level of service he provides.",
-  },
-  {
-    id: "t2",
+    id: "testimonial-1",
     name: "Dave Hughes",
     date: "—",
     rating: 5,
@@ -27,16 +19,15 @@ const TESTIMONIALS: Testimonial[] = [
       "Jeremy was superb. He explained exactly what his services offered and listened to any questions I had. Set my worries at ease. I look forward to the future under Genio’s.",
   },
   {
-    id: "t3",
+    id: "testimonial-2",
     name: "Leanne",
     date: "25/03/2024",
     rating: 5,
     text:
       "Jeremy and his staff are very professional; easy communication, always available and willing to go the extra mile to help. Running a business is no easy task but with Genio Accountants on your side it makes life so much easier.",
   },
-  // extra items for when we wire the slider:
   {
-    id: "t4",
+    id: "testimonial-3",
     name: "Sophie Turner",
     date: "02/04/2024",
     rating: 5,
@@ -44,12 +35,20 @@ const TESTIMONIALS: Testimonial[] = [
       "Swift advice and clear planning. Our finance ops feel organised for the first time in years.",
   },
   {
-    id: "t5",
+    id: "testimonial-4",
     name: "James Porter",
     date: "18/04/2024",
     rating: 5,
     text:
       "Great experience from start to finish. Practical guidance that saved us time and tax.",
+  },
+  {
+    id: "testimonial-5",
+    name: "Mark Crowley",
+    date: "15/02/2024",
+    rating: 5,
+    text:
+      "Jeremy has been doing my partners accounts for over 3 years now and we are very happy with the top level of service he provides.",
   },
 ];
 
@@ -65,7 +64,6 @@ export default function Testimonials() {
           Customer testimonials
         </h2>
 
-        {/* header stars + copy */}
         <div className="mt-8 flex flex-col items-center gap-4">
           <div className="flex gap-3">
             {Array.from({ length: 5 }).map((_, index) => (
