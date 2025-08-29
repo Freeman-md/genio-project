@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import MobileNav from "./mobile-nav";
 
 const NAV_LINKS = [
@@ -16,8 +13,6 @@ const NAV_LINKS = [
 ];
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container">
