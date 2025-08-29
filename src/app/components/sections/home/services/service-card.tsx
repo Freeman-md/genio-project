@@ -36,7 +36,7 @@ function ServiceCard({
       >
         <span
           className="
-            text-white sm:font-semibold
+            text-foreground sm:font-semibold
             text-xs sm:text-base md:text-lg
           "
         >
