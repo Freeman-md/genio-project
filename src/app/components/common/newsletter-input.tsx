@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import GradientBorder from "../ui/gradient-border";
 
 type Props = {
   placeholder?: string;
@@ -43,7 +44,10 @@ export default function NewsletterInput({
 
   return (
     <form onSubmit={onSubmit} className="w-full max-w-[520px]">
-      <div className="flex items-center gap-3 rounded-full border border-white/30 bg-white/5 px-4 py-2 backdrop-blur">
+      <GradientBorder
+        radius="rounded-full"
+        innerClassName="flex items-center gap-3 bg-muted px-4 py-2 backdrop-blur"
+      >
         <input
           type="email"
           value={email}
@@ -65,7 +69,7 @@ export default function NewsletterInput({
             alt="Right Arrow"
           />
         </button>
-      </div>
+      </GradientBorder>
 
       {error && <p className="mt-2 text-sm text-red-300">{error}</p>}
       {status === "success" && (

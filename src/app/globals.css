@@ -9,6 +9,13 @@
   --hero-mid: #832169;
   --hero-pink: #9d1c5c;
   --hero-glow: #af207a;
+
+  --border-gradient: linear-gradient(
+    180deg,
+    rgba(150, 34, 122, 0.75) 0%,
+    rgba(171, 91, 154, 0.75) 46%,
+    rgba(192, 146, 171, 0.75) 100%
+  );
 }
 
 @theme inline {
@@ -17,7 +24,7 @@
 
   --color-primary: #962D72;
   --color-surface-2: #150310;
-  --color-muted: var(--foreground);
+  --color-muted: var(--background);
 
   --font-sans: var(--font-rubik);
 }
@@ -54,19 +61,17 @@
   }
 
   .bg-hero-vignette {
-  background: radial-gradient(
-    circle at 50% 50%,
-    transparent 82%,
-    color-mix(in oklab, var(--background) 94%, transparent) 100%
-  );
-}
+    background: radial-gradient(circle at 50% 50%,
+        transparent 82%,
+        color-mix(in oklab, var(--background) 94%, transparent) 100%);
+  }
 
   .edge-fade {
     background:
       linear-gradient(to bottom, color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
-      linear-gradient(to top,    color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
-      linear-gradient(to right,  color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%),
-      linear-gradient(to left,   color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%);
+      linear-gradient(to top, color-mix(in oklab, var(--background) 90%, transparent) 0%, transparent 28%),
+      linear-gradient(to right, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%),
+      linear-gradient(to left, color-mix(in oklab, var(--background) 88%, transparent) 0%, transparent 24%);
     pointer-events: none;
   }
 }
