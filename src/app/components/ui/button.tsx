@@ -7,9 +7,8 @@ const buttonStyles = cva(
     variants: {
       variant: {
         "solid-white":
-          "bg-white text-black shadow-sm hover:bg-white/90",
-        "solid-dark":
-          "bg-black/80 text-white hover:bg-black",
+          "text-black shadow-sm bg-[linear-gradient(to_bottom,rgba(255,255,255,1)_0%,rgba(230,230,230,1)_100%)] hover:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,rgba(220,220,220,0.9)_100%)]",
+         "solid-muted": "bg-muted text-white hover:bg-muted/90",
         "outline-white":
           "border border-white text-white hover:bg-white/10",
       },
