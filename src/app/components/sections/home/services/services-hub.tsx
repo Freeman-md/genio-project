@@ -22,7 +22,7 @@ export default function ServicesHub() {
   return (
     <section
       aria-label="Genio services hub"
-      className="relative overflow-hidden py-14 sm:py-16 md:py-20 lg:py-24"
+      className="relative overflow-hidden !-mt-40 pb-14 sm:pb-16 md:pb-20 lg:pb-24"
     >
       <div className="container relative">
         <div className="relative grid grid-cols-[1.5fr_9fr_1.5fr] items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 max-[415px]:gap-4">
@@ -88,7 +88,6 @@ export default function ServicesHub() {
             </GradientBorder>
           </div>
 
-          {/* RIGHT STACK */}
           <div className="flex flex-col gap-6 sm:gap-8 md:gap-12 lg:gap-40">
             {rightItems.map((service) => (
               <ServiceCard

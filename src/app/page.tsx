@@ -6,16 +6,29 @@ import Testimonials from "./components/sections/home/testimonials/testimonials";
 
 export default function Home() {
   return (
-    <div>
+    <main className="relative">
+      
+
       <Hero />
 
       <ServicesHub />
 
       <TaxPlanning />
 
+      <div
+        aria-hidden
+        className="
+          pointer-events-none
+          absolute inset-x-0 top-0 -z-10
+          h-[clamp(720px,100svh,1100px)]
+          bg-gradient
+          mask-bottom-fade
+        "
+      />
+
       <Testimonials />
 
       <LatestNews />
-    </div>
+    </main>
   );
 }

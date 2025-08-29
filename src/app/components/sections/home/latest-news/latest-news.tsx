@@ -51,7 +51,7 @@ const NEWS: NewsItem[] = [
 export default function LatestNews() {
   return (
     <section className="relative isolate">
-      <div className="container py-16 md:py-24">
+      <div className="container !-mt-10 pb-16 md:pb-24">
         <h2 className="text-brand-gradient text-center text-4xl md:text-5xl">
           Latest news
         </h2>

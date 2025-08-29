@@ -10,7 +10,7 @@ const buttonStyles = cva(
           "text-black shadow-sm bg-[linear-gradient(to_bottom,rgba(255,255,255,1)_0%,rgba(230,230,230,1)_100%)] hover:bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,rgba(220,220,220,0.9)_100%)]",
         "solid-muted": "bg-muted text-foreground hover:bg-muted/90",
         "outline-white":
-          "border border-white text-foreground hover:bg-white/10",
+          "border border-foreground text-foreground hover:bg-foreground/10",
       },
       size: {
         sm: "px-4 py-1",

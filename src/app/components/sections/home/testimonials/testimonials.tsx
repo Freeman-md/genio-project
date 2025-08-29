@@ -49,7 +49,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="relative isolate">
+    <section className="relative isolate mask-both-fades">
       <div className="absolute inset-0 bg-gradient" />
       <div className="absolute inset-0 bg-vignette" />
       <div className="absolute inset-0 edge-fade" />
